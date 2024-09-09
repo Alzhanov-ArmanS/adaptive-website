@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">Logo</div>
+            <!--Добавьте в index.html изображение, которое будет адаптироваться под размеры экрана:-->
+        <section class="content__image">
+            <img src="images/responsive-image.jpg" alt="Responsive Image"
+            class="image">
+            </section>
+            <div>
+                <h1>Responsive Image with srcset</h1>
+                <img src="images/responsive-image.jpg" 
+                     srcset="image-small.jpg 480w, 
+                             image-medium.jpg 800w, 
+                             image-large.jpg 1200w" 
+                     sizes="(max-width: 600px) 480px, 
+                            (max-width: 900px) 800px, 
+                            1200px" 
+                     alt="Responsive Image">
+            </div>
+            
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item"><a class="header__link"
+href="#">Home</a></li>
+                <li class="header__item"><a class="header__link"
+href="#">About</a></li>
+                <li class="header__item"><a class="header__link"
+href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        <section class="content__intro">
+            <h1>Welcome to Adaptive Website</h1>
+            
+            <p>This is a responsive page with adaptive images, custom fonts,
+and a favicon.</p>
+            <p>Here I will try to complete the task 1.8</p>
+        </section>
+    </main>
+    <!--Позиционирование и z-index-->
+    <h2>I am a pop-up window</h2>
+    <button id="openModal">Open popup window
+    </button>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Pop-up window</h2>
+        <p>Thanks for watching.
+        </p>
+      </div>
+    </div>
+    
+    <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("openModal");
+        var span = document.getElementsByClassName("close")[0];
+    
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+    
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <footer class="footer">
+        <p>© 2024 Adaptive Website</p>
+    </footer>
+</body>
+</html>
+        
